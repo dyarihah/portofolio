@@ -1,0 +1,283 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(135deg, #020617, #0f172a);
+  color: #e5e7eb;
+  line-height: 1.6;
+}
+
+/* ===== NAV ===== */
+nav {
+  position: sticky;
+  top: 0;
+  background: rgba(2,6,23,0.85);
+  backdrop-filter: blur(10px);
+  padding: 14px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 600;
+  color: #00ADB5;
+}
+
+.logo span {
+  color: #e5e7eb;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  color: #e5e7eb;
+  text-decoration: none;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #00ADB5;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00ADB5;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ===== SECTION ===== */
+section {
+  padding: 70px 6%;
+  text-align: center;
+  position: relative;
+  animation: fade 0.6s ease;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #00ADB5, transparent);
+  transform: translateX(-50%);
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2 {
+  color: #00ADB5;
+  margin-bottom: 24px;
+  font-size: 32px;
+}
+
+/* ===== PROFILE ===== */
+#profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  text-align: left;
+}
+
+.profile-text h1 {
+  font-size: 44px;
+  margin-bottom: 15px;
+}
+
+.profile-text p {
+  max-width: 520px;
+}
+
+.profile-text button {
+  margin-top: 25px;
+  padding: 12px 28px;
+  background: #00ADB5;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.profile-text button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,173,181,0.3);
+}
+
+.profile-img {
+  position: relative;
+}
+
+.profile-img::after {
+  content: "";
+  position: absolute;
+  inset: -30px;
+  background: radial-gradient(circle, rgba(0,173,181,0.35), transparent 70%);
+  filter: blur(40px);
+  z-index: -1;
+}
+
+.profile-img img {
+  width: 300px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+}
+
+/* ===== TABLE ===== */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(30,41,59,0.8);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 14px;
+}
+
+th {
+  background: rgba(0,0,0,0.5);
+  color: #00ADB5;
+}
+
+/* ===== SKILLS ===== */
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
+  gap: 18px;
+}
+
+.skill {
+  background: rgba(30,41,59,0.85);
+  padding: 20px;
+  border-radius: 14px;
+  transition: 0.3s;
+}
+
+.skill:hover {
+  background: #00ADB5;
+  transform: translateY(-6px);
+}
+
+/* ===== PROJECT ===== */
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap: 20px;
+}
+
+.card,
+.project-card {
+  background: rgba(30,41,59,0.75);
+  padding: 24px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: 0.3s;
+}
+
+.card:hover,
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+/* ===== CONTACT ===== */
+.contact a {
+  display: inline-block;
+  margin: 10px;
+  color: #00ADB5;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.contact a:hover {
+  transform: scale(1.1);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #020617;
+  font-size: 14px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  section {
+    padding: 50px 5%;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  #profile {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-text h1 {
+    font-size: 32px;
+  }
+
+  .profile-text p {
+    margin: 0 auto;
+  }
+
+  .profile-img img {
+    width: 220px;
+  }
+}
